@@ -1,9 +1,11 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    /* Cambiamos el height fijo por min-height y permitimos scroll vertical */
+    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden; /* Evita barras de desplazamiento */
+    overflow-x: hidden; /* Evita scroll horizontal si los botones se mueven a los lados */
+    overflow-y: auto;   /* Permite deslizar hacia abajo si el contenido no cabe */
 }
 
 /* --- Fondo de Globos --- */
@@ -71,45 +73,52 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    /* Ajustes responsivos para el contenedor principal */
+    min-height: 85vh; 
+    height: auto; 
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px; /* Un poco más de padding */
     background: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
     border-radius: 15px;
-    max-width: 600px;
-    margin: auto;
+    max-width: 90%; /* Para que no toque las orillas en el celular */
+    width: 600px;
+    margin: 30px auto; /* Margen arriba y abajo para que respire */
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem); /* Tamaño de fuente responsivo */
     color: #e91e63;
     margin-bottom: 0.5rem;
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Tamaño de fuente responsivo */
     margin-bottom: 1.5rem;
     color: #333;
 }
 
 .button-container {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap; /* Si los botones no caben juntos, uno se pone debajo del otro */
 }
 
 button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 15px 25px;
+    font-size: 1.1rem;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     color: white;
+    /* Evita que los botones en móviles se hagan muy delgados */
+    min-width: 150px; 
 }
 
 .btn-boa { background-color: #4caf50; }
@@ -129,10 +138,12 @@ button {
 
 img.full-image {
     max-width: 100%;
-    max-height: 70vh;
+    /* Reducimos un poco el max-height para que deje espacio al texto en móviles */
+    max-height: 50vh; 
     border-radius: 15px;
     margin-bottom: 1rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    object-fit: cover; /* Ayuda a que la imagen no se deforme */
 }
 
 /* Ocultar secciones inicialmente */
@@ -148,17 +159,20 @@ img.full-image {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5); /* Fondo oscuro */
+    overflow-y: auto; /* Permite scroll en el modal si es muy alto */
 }
 
 .modal-content {
     background-color: #fff;
-    margin: 15% auto;
-    padding: 30px;
+    margin: 10% auto;
+    padding: 30px 20px;
     border-radius: 15px;
+    width: 90%; /* Ancho adaptado al móvil */
     max-width: 500px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     border: 2px solid #e91e63;
+    box-sizing: border-box;
 }
 
 .modal-hearts {
@@ -176,12 +190,11 @@ img.full-image {
 
 /* Estilos de carta */
 .letter-section {
-    max-height: 80vh;
-    overflow-y: auto;
-    padding: 30px;
+    max-height: none; /* Quitamos la restricción de altura */
+    padding: 30px 20px;
     border-radius: 15px;
     background: #fffafa; /* Fondo blanco nieve */
     border: 2px solid #ffc0cb; /* Borde rosa pastel */
 }
 .letter-text { text-align: left; }
-.letter-section p { margin-bottom: 10px; font-size: 1.2rem; line-height: 1.6; }
+.letter-section p { margin-bottom: 10px; font-size: 1.1rem; line-height: 1.5; }
