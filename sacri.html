@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿La Sacri? 👩</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para fondo divertido */
+        .funny-bg {
+            background-color: #ffe082; /* Color divertido */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" width="50" height="50"><text x="10" y="30" font-size="20">😂</text><text x="30" y="10" font-size="20">🤣</text></svg>');
+            background-repeat: repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon-bg" id="mainBg">
+        <div id="balloon-container"></div>
+    </div>
+    <div class="content" id="sacriContentMain">
+        <img class="full-image" src="images/Sacri.jpeg" alt="Sacri">
+        <p>Estas 100 % segura que eres la Sacri</p>
+        <div class="button-container">
+            <button class="btn-yes" id="btnSacriYes">Obvio soy yo 🙋‍♀️</button>
+            <button class="btn-sacri" id="btnSacriNo">Al 🌶️ ni la topo</button>
+        </div>
+    </div>
+
+    <!-- Sección Mabel (Tonta) -->
+    <div class="content hidden" id="mabelContent">
+        <img class="full-image" src="images/Mabel.jpeg" alt="Mabel">
+        <p>Eres una TONNNTA…</p>
+        <p>(tonnnta… tonnnta… tonnta…)</p>
+        <button class="btn-return" id="btnReturnMabel">Volver</button>
+    </div>
+
+    <!-- Sección Carta -->
+    <div class="content hidden letter-section" id="letterContent">
+        <div class="letter-text">
+            <p>❤️🧡💛💚💙💜❤️</p>
+            <p>🌟🌟🌟🌟🌟🌟🌟</p>
+            <p>🐍🐍🐍🐍🐍🐍🐍</p>
+            <p>Eres una persona increíble,</p>
+            <p>Feliz Vuelta al Sol 🎉🎂,</p>
+            <p>Espero que sepas que eres una de las personas más importantes en mi vida, hemos vivido tantas pato aventuras buenas y malas que es como si siempre hubieras estado aquí conmigo, a pesar de que nos peleamos y tenemos nuestras diferencias, es difícil imaginarme una vida en la no estes 😢,</p>
+            <p>TE QUIERO MUCHO</p>
+        </div>
+        <button class="btn-yes" id="btnLetterNext">Picale aquí 😳💖</button>
+    </div>
+
+    <!-- Sección SY Feliz Cumple -->
+    <div class="content hidden" id="syContent">
+        <img class="full-image" src="images/SY.jpeg" alt="S&Y">
+        <h1>Feliz Cumpleaños</h1>
+        <button class="btn-sacri" id="btnSyNext">Tons… 👀</button>
+    </div>
+
+    <!-- Sección Perdón -->
+     <!-- Sección Perdón -->
+    <div class="content hidden" id="pardonContent">
+        <p>Me perdonas 🥺</p>
+        <div class="button-container">
+            <button class="btn-yes" id="btnPardonYes">Si, obvio 🤗 menso</button>
+            <button class="btn-no" id="btnPardonNo">Nel PRRO ❌</button>
+        </div>
+    </div>
+
+    <!-- Sección Fin -->
+    <div class="content hidden" id="finContent">
+        <p>Sabia que me perdonarías 🤩🌟🤗</p>
+        <img class="full-image" src="images/BA.jpeg" alt="B&A">
+        <button class="btn-no" style="background-color: red;" id="btnFin">👉 FIN 👉</button>
+    </div>
+
+    <script src="js/main.js"></script> <!-- Reusar animación globos -->
+    <script src="js/sacri.js"></script>
+</body>
+</html>

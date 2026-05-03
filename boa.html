@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Segura? 🐍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="balloon-bg">
+        <div id="balloon-container"></div>
+    </div>
+    <div class="content">
+        <img id="boaImage" class="full-image" src="images/Boa.jpeg" alt="Boa">
+        <p id="boaQuestion">¿Segura? 🤔🤔🤔</p>
+        <div class="button-container" id="boaButtons">
+            <button class="btn-yes" id="btnBoaYes">Si</button>
+            <button class="btn-no" id="btnBoaNo">No</button>
+        </div>
+        <button class="btn-return hidden" id="btnReturnMainBoa">Volver</button>
+        
+        <!-- Sección de secreto BOA (inicialmente oculta) -->
+        <div id="boaSecret" class="hidden">
+            <p>¿Sabias que antes de Sacri, fuiste la Boa? Por eso solo yo puedo decirte BOA, porque es especial, único y de uso exclusivo para mi JAJAJA</p>
+            <button class="btn-boa" id="btnSnakeSpecial">Pícale aquí 🐍</button>
+        </div>
+        
+        <!-- Modal de amor BOA -->
+        <div id="loveModalBoa" class="modal">
+            <div class="modal-content">
+                <div id="loveHeartsBoa" class="modal-hearts"></div>
+                <h1>TE QUIERO MUCHO</h1>
+                <p>❤️💖🌸🌹💖❤️🐍🐍🐍🐍</p>
+                <button class="btn-return" id="btnCloseLoveBoa">Volver</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script> <!-- Reusar animación globos -->
+    <script src="js/boa.js"></script>
+</body>
+</html>
